@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Daily Prophet</title>
+    </head>
+
+    <body>
+        <div id="root">
+        </div>
+    </body>
+    <script
+        src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+    <script
+        src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        const root = document.getElementById("root");
+        function KmToMiles() {
+            const [distance, setDistance] = React.useState(0);
+            const [invert, setInvert] = React.useState(false);
+            const onChange = (event) => {
+                setDistance(event.target.value);
+            }
+            const reset = () => setDistance(0);
+            const onInvert = () => {
+                reset();
+                setInvert((current) => !current)
+            }
+            return (
+                <div>
+                    <h2>Km to Mile</h2>
+                    <div>
+                        <label htmlFor="km"> KM </label>
+                        <input value={invert ? Math.round(distance * 1.609) : distance} id="km" placeholder="Km" type="number" onChange={onChange} disabled={invert === true} />
+                    </div>
+                    <div>
+                        <label htmlFor="mile"> MILE </label>
+                        <input value={invert ? distance : Math.round(distance / 1.609)} id="mile" placeholder="Mile" type="number" onChange={onChange} disabled={invert === false} />
+                    </div>
+                    <button onClick={reset}>Reset</button>
+                    <button onClick={onInvert}>Invert</button>
+                </div>
+            )
+        }
+        function MinutesToHours() {
+            const [time, setTime] = React.useState(0);
+            const [flipped, setFlipped] = React.useState(false);
+            const onChange = (event) => {
+                setTime(event.target.value);
+            };
+            const reset = () => {
+                setTime(0);
+            }
+            const onFlip = () => {
+                reset();
+                setFlipped((current) => !current);
+            }
+            return (
+                <div>
+                    <h2 className="title__time">Time Converter</h2>
+                    <div>
+                        <label htmlFor="minutes">Minutes</label>
+                        <input
+                            value={flipped ? Math.round(time * 60) : time}
+                            id="minutes"
+                            placeholder="Minutes"
+                            type="number"
+                            onChange={onChange}
+                            disabled={flipped === true} />
+                    </div>
+                    <div>
+                        <label htmlFor="hours">Hours</label>
+                        <input
+                            value={flipped ? time : Math.round(time / 60)}
+                            id="hours" placeholder="Hours"
+                            type="number"
+                            onChange={onChange}
+                            disabled={flipped === false} />
+                    </div>
+                    <button onClick={reset}>Reset</button>
+                    <button onClick={onFlip}>Invert</button>
+                </div >
+            );
+        }
+        function WonToDollar() {
+            const [money, setMoney] = React.useState(0);
+            const [flipped, setFlipped] = React.useState(false);
+            const onChange = (event) => {
+                setMoney(event.target.value);
+            };
+            const Reset = () => {
+                setMoney(0);
+            };
+            const onFlip = () => {
+                setFlipped((current) => !current);
+            };
+            return (
+                <div>
+                    <h3>Won To Dollar</h3>
+                    <div>
+                        <label htmlFor="money">KRW</label>
+                        <input id="money" value={flipped ? ((money * 1383).toFixed(2)) : money} placeholder="원" type="number" onChange={onChange} disabled={flipped}></input>₩
+                        <label htmlFor="dollar">USD</label>
+                        <input id="dollar" value={flipped ? money : (money / 1383).toFixed(2)} placeholder="달러" type="number" onChange={onChange} disabled={!flipped}></input>$
+                        <button onClick={Reset}>리셋</button >
+                        <button onClick={onFlip}>전환</button >
+                    </div>
+                </div >
+            )
+        };
+        function App() {
+            const [index, setIndex] = React.useState("0");
+            const onSelect = (event) => {
+                setIndex(event.target.value);
+            }
+            return (
+                <div>
+                    <h1>Converter</h1>
+                    <select value={index} onChange={onSelect}>
+                        <option value="0">Km & Miles</option>
+                        <option value="1">Minutes & Hours</option>
+                        <option value="2">Won & Dollar</option>
+                    </select>
+                    <hr />
+                    {index === "0" ? <KmToMiles /> : null}
+                    {index === "1" ? <MinutesToHours /> : null}
+                    {index === "2" ? <WonToDollar /> : null}
+                </div>
+            )
+        };
+        ReactDOM.render(<App />, root);
+    </script>
+
+</html>
