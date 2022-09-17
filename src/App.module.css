@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+  width: 100%;
+  height: 200vh;
+}
+
+body {
+  background-image: url("/src/img/Daily_prophet_the_boy_who_lies.jpg"), url("/src/img/daily-prophet-Albus_Dumbledore_and_Harry_Potter.jpg");
+  background-size: 50% 100%, 50% 100%;
+  background-position: 0px 0px, 100% 0px;
+  background-repeat: no-repeat;
+}
+
+/* .content__container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  border: 2px solid black;
+  outline: 3px solid skyblue;
+  background-color: silver;
+} */
+
+.content__container > :first-child {
+  position: absolute;
+  width: 28.6%;
+  height: 48%;
+  top: 64.5%;
+  left: 18%;
+}
+
+.content__container > :last-child {
+  position: absolute;
+  width: 29%;
+  height: 54.3%;
+  top: 66.7%;
+  right: 10.5%;
+}
