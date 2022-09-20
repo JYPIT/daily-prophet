@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/daily-prophet/static/css/main.e6e24f2e.css",
+    "main.css": "/daily-prophet/static/css/main.94a3fbca.css",
     "main.js": "/daily-prophet/static/js/main.99c9858c.js",
     "static/media/harry-run.gif": "/daily-prophet/static/media/harry-run.639b3380c63b19f7033b.gif",
     "static/media/albus.gif": "/daily-prophet/static/media/albus.06e2ae4ec46f6ba7d147.gif",
     "static/media/Daily_prophet_the_boy_who_lies.jpg": "/daily-prophet/static/media/Daily_prophet_the_boy_who_lies.38793fbe4ad3216ee91c.jpg",
     "static/media/daily-prophet-Albus_Dumbledore_and_Harry_Potter.jpg": "/daily-prophet/static/media/daily-prophet-Albus_Dumbledore_and_Harry_Potter.6f6dfc2ccef2e64d68dd.jpg",
     "index.html": "/daily-prophet/index.html",
-    "main.e6e24f2e.css.map": "/daily-prophet/static/css/main.e6e24f2e.css.map",
+    "main.94a3fbca.css.map": "/daily-prophet/static/css/main.94a3fbca.css.map",
     "main.99c9858c.js.map": "/daily-prophet/static/js/main.99c9858c.js.map"
   },
   "entrypoints": [
-    "static/css/main.e6e24f2e.css",
+    "static/css/main.94a3fbca.css",
     "static/js/main.99c9858c.js"
   ]
 }
